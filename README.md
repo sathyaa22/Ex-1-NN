@@ -140,7 +140,15 @@ print("\nLenght of X_test ",len(X_test))
 
 ### Outliers
 
+![image](https://github.com/user-attachments/assets/ddcdb901-9233-4070-80e7-b7560ba289b6)
 
+
+### Checking datasets after dropping string values data from dataset
+
+![image](https://github.com/user-attachments/assets/eb0d0f56-b419-4e49-b271-d1c60364d08e)
+
+
+### Normalize the dataset
 
 
 
