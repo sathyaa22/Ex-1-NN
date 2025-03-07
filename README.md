@@ -42,9 +42,8 @@ STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
 
-
+### Import Libraries
 ```
-
 from google.colab import files
 import pandas as pd
 import io
@@ -54,52 +53,63 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 ```
 
+### Read and print the dataset
 ```
 df = pd.read_csv('Churn_Modelling.csv')
 print(df)
 ```
 
+### Checking Data
 ```
 df.head()
 df.tail()
 df.columns
 ```
 
+### Check the missing data
 ```
 df.isnull().sum()
 ```
 
+### Check for Duplicates
 ```
 df.duplicated()
 ```
 
+### Assigning Y
 ```
 y = df.iloc[:, -1].values
 print(y)
 ```
 
+### Check for duplicates
 ```
 df.duplicated()
 ```
 
+### Check for outliers
 ```
 df.describe()
 ```
 
+### Dropping string values data from dataset
 ```
 data = df.drop(['Surname', 'Geography','Gender'], axis=1)
 ```
 
+### Checking datasets after dropping string values data from dataset
 ```
 data.head()
 ```
 
+### Normalize the dataset
 ```
 scaler=MinMaxScaler()
 df1=pd.DataFrame(scaler.fit_transform(data))
 print(df1)
 ```
 
+### Split the dataset
 ```
 X=df.iloc[:,:-1].values
 y=df.iloc[:,-1].values
@@ -107,6 +117,7 @@ print(X)
 print(y)
 ```
 
+### Training and testing model
 ```
 X_train ,X_test ,y_train,y_test=train_test_split(X,y,test_size=0.2)
 print("X_train\n")
@@ -141,6 +152,7 @@ print("\nLenght of X_test ",len(X_test))
 ### Outliers
 
 ![image](https://github.com/user-attachments/assets/ddcdb901-9233-4070-80e7-b7560ba289b6)
+![image](https://github.com/user-attachments/assets/fce2b26d-55ec-40a7-a67a-1b40fd13bd82)
 
 
 ### Checking datasets after dropping string values data from dataset
@@ -150,9 +162,17 @@ print("\nLenght of X_test ",len(X_test))
 
 ### Normalize the dataset
 
+![image](https://github.com/user-attachments/assets/115e3a20-39c0-49a0-be83-5365acc7c0fc)
 
 
+### Split the dataset
 
+![image](https://github.com/user-attachments/assets/62bb503d-a3c4-47ee-b87e-0c1b8bd488d1)
+
+
+### Training and testing model
+
+![image](https://github.com/user-attachments/assets/a3bb2a10-7535-4dbf-8ef5-e923025517bb)
 
 
 ## RESULT:
