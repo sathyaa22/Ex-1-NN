@@ -1,5 +1,9 @@
 <H3>ENTER YOUR NAME</H3>
+SATHYAA R
+
 <H3>ENTER YOUR REGISTER NO.</H3>
+212223100052
+
 <H3>EX. NO.1</H3>
 <H3>DATE</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
@@ -37,11 +41,110 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+
+
+```
+
+from google.colab import files
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+import numpy as np
+```
+
+```
+df = pd.read_csv('Churn_Modelling.csv')
+print(df)
+```
+
+```
+df.head()
+df.tail()
+df.columns
+```
+
+```
+df.isnull().sum()
+```
+
+```
+df.duplicated()
+```
+
+```
+y = df.iloc[:, -1].values
+print(y)
+```
+
+```
+df.duplicated()
+```
+
+```
+df.describe()
+```
+
+```
+data = df.drop(['Surname', 'Geography','Gender'], axis=1)
+```
+
+```
+data.head()
+```
+
+```
+scaler=MinMaxScaler()
+df1=pd.DataFrame(scaler.fit_transform(data))
+print(df1)
+```
+
+```
+X=df.iloc[:,:-1].values
+y=df.iloc[:,-1].values
+print(X)
+print(y)
+```
+
+```
+X_train ,X_test ,y_train,y_test=train_test_split(X,y,test_size=0.2)
+print("X_train\n")
+print(X_train)
+print("\nLenght of X_train ",len(X_train))
+print("\nX_test\n")
+print(X_test)
+print("\nLenght of X_test ",len(X_test))
+```
 
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+
+### Data checking
+
+![image](https://github.com/user-attachments/assets/72c5b46d-474c-4f61-a4cb-d36edf248168)
+
+### Missing data
+
+![image](https://github.com/user-attachments/assets/865d9a07-619a-4e6d-8337-dbf99c1476e6)
+
+### Duplicated
+
+![image](https://github.com/user-attachments/assets/d41f49fa-4696-49f1-a689-86abe25b3242)
+
+
+### Values of 'Y'
+
+![image](https://github.com/user-attachments/assets/e9f40a74-3695-4589-9411-f33ea592546f)
+
+
+### Outliers
+
+
+
+
+
+
 
 
 ## RESULT:
